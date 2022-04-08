@@ -8,12 +8,10 @@
 /* tslint:disable */
 /* eslint-disable */
 export class CreatUserInput {
-    count: number;
+    id: string;
     displayName: string;
     email: string;
-    mobile?: Nullable<string>;
-    team?: Nullable<string>;
-    message?: Nullable<string>;
+    password: string;
 }
 
 export class User {
@@ -24,11 +22,11 @@ export class User {
 }
 
 export abstract class IQuery {
-    abstract users(): Nullable<User>[] | Promise<Nullable<User>[]>;
+    abstract users(): Nullable<Nullable<User>[]> | Promise<Nullable<Nullable<User>[]>>;
 }
 
 export abstract class IMutation {
-    abstract createUser(createUserInput: CreatUserInput): User | Promise<User>;
+    abstract registerUser(createUserInput: CreatUserInput): User | Promise<User>;
 }
 
 type Nullable<T> = T | null;

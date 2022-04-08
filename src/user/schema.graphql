@@ -6,20 +6,18 @@ type User {
 }
 
 input CreatUserInput {
-  count: Int!
+  id: String!
   displayName: String!
   email: String!
-  mobile: String
-  team: String
-  message: String
+  password: String!
 }
 
 #
 
 type Query {
-  users: [User]!
+  users: [User]
 }
 
 type Mutation {
-  createUser(createUserInput: CreatUserInput!): User!
+  registerUser(createUserInput: CreatUserInput!): User!
 }

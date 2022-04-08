@@ -5,9 +5,8 @@ export class CreateUserInput {
   @Field({ description: 'Example field (placeholder)' })
   id: string;
 
-  @Field({ description: 'Display name no debe ser null' })
+  @Field()
   displayName: string;
-
   @Field()
   email: string;
   @Field()
