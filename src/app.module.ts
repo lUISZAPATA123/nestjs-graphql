@@ -7,6 +7,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 // import { UserModule } from './user/user.module';
 import { UserModule } from './user/user.module';
+import { SocketsEventsGateway } from './sockets_events.gateway';
 
 @Module({
   imports: [
@@ -25,6 +26,6 @@ import { UserModule } from './user/user.module';
     UserModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, SocketsEventsGateway],
 })
 export class AppModule {}
